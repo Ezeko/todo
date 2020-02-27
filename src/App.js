@@ -9,16 +9,42 @@ class App extends Component {
     super()
     // declare the states. the state are the dynamic variables of an app
     // the state of the app is empty at the start of the app
-    this.state = {todos: [ {task: "eat"}, {task: "sleep"}]};
+    this.state = {todos: [],
+                    newTodo: '',
+                  
+                  };
     
+    
+  }
+  //save todos as you type
+   handleChange = (event) =>{
+    this.setState({newTodo:  event.target.value })
+    console.log(this.state.newTodo)
+   }
+
+
+   handleSubmit = (event) =>{
+     let task = event.target.value
+     let todo = this.state.todos.concat({task: this.state.newTodo})
+     console.log(todo)
+     console.log(this.state.newTodo)
+     this.setState({todos: todo, newTodo: ''})
+     console.log(task)
+     event.preventDefault()
+
   }
   
   render(){
    
     return(
     <div className="App">
-      <InputField />
-      <Todos todos= {this.state.todos}/>
+
+      <InputField ChangeField={this.handleChange}
+      newTodo = {this.state.newTodo}
+      SubmitTodo={this.handleSubmit} />
+
+      <Todos todos= {this.state.todos} />
+
     </div>
     )
   }
