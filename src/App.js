@@ -29,6 +29,10 @@ class App extends Component {
      event.preventDefault()
 
   }
+  changeStatus = () =>{
+    let todo = this.state.todos.concat({task: this.state.newTodo, status: 'Cleared'})
+    this.setState({todos: todo})
+  }
   
   render(){
    
@@ -39,7 +43,9 @@ class App extends Component {
       newTodo = {this.state.newTodo}
       SubmitTodo={this.handleSubmit} />
 
-      <Todos className="todo" todos= {this.state.todos} />
+      <Todos className="todo" todos= {this.state.todos} 
+      changeId ={this.changeStatus}
+      />
 
     </div>
     )
