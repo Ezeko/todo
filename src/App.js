@@ -24,7 +24,7 @@ class App extends Component {
 
 
    handleSubmit = (event) =>{
-     let todo = this.state.todos.concat({task: this.state.newTodo})
+     let todo = this.state.todos.concat({task: this.state.newTodo, status: 'NotCleared'})
      this.setState({todos: todo, newTodo: ''})
      event.preventDefault()
 
@@ -39,7 +39,7 @@ class App extends Component {
       newTodo = {this.state.newTodo}
       SubmitTodo={this.handleSubmit} />
 
-      <Todos todos= {this.state.todos} />
+      <Todos className="todo" todos= {this.state.todos} />
 
     </div>
     )
