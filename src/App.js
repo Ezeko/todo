@@ -19,17 +19,13 @@ class App extends Component {
   //save todos as you type
    handleChange = (event) =>{
     this.setState({newTodo:  event.target.value })
-    console.log(this.state.newTodo)
+   
    }
 
 
    handleSubmit = (event) =>{
-     let task = event.target.value
-     let todo = this.state.todos.concat({task: this.state.newTodo})
-     console.log(todo)
-     console.log(this.state.newTodo)
+     let todo = this.state.todos.concat({task: this.state.newTodo, status: 'NotCleared'})
      this.setState({todos: todo, newTodo: ''})
-     console.log(task)
      event.preventDefault()
 
   }
@@ -43,7 +39,7 @@ class App extends Component {
       newTodo = {this.state.newTodo}
       SubmitTodo={this.handleSubmit} />
 
-      <Todos todos= {this.state.todos} />
+      <Todos className="todo" todos= {this.state.todos} />
 
     </div>
     )
