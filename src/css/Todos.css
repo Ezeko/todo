@@ -9,5 +9,18 @@
         justify-content: center;
         font-size: calc(10px + 2vmin);
         color: white;
+        margin: 2rem;
       
+}
+#box{
+    display: flex;
+    justify-content: center;
+}
+i{
+    margin-top: 2.5rem;
+    margin-left: 1rem;
+}
+h1{
+    margin: 1rem;
+    height: 1rem;
 }

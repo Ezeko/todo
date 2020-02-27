@@ -7,15 +7,20 @@ const Todos = props =>{
             <div id="todos">
             {
                 props.todos.map((opt, i)=>{
-                return (
-                    
+                if (opt){
+                    return (
+                        <div id='box'>
                         <h1 key={i} id={opt.status} >
-                        {opt.task}
-                    </h1>
-                  
-                    
-               
-                )
+                            {opt.task}
+                        </h1>
+                        <i key={i + 'p'} className="fa fa-check-square"></i>
+                        
+                        </div>
+                    )
+                }else{
+                    return null
+                }
+                
                 }
             
             )}
