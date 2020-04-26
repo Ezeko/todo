@@ -1,4 +1,4 @@
-import React ,{ Component}from 'react';
+import React , { Component}from 'react';
 import Todos from './Todos'
 import InputField from './InputField'
 
@@ -32,6 +32,13 @@ class App extends Component {
   changeStatus = () =>{
     let todo = this.state.todos.concat({task: this.state.newTodo, status: 'Cleared'})
     this.setState({todos: todo})
+  }
+
+  isDone () {
+    this.state.todos.filter(( todo )=>{
+      (todo.id == id)
+      console.log(todo)
+    })
   }
   
   render(){
