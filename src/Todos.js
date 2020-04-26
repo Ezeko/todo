@@ -9,13 +9,13 @@ const Todos = props =>{
                 props.todos.map((opt, i)=>{
                 if (opt){
                     return (
-                        <div id='box'>
-                        <h1 key={i} id={opt.status} >
+                        <div id='box' key = {i}>
+                        <h1  id={opt.status} >
                             {opt.task}
                         </h1>
                         <div id='fa-fa'>
-                        <i key={i + 'p'} className="fa fa-check-square" onClick = { () => props.isDone(opt.id) }></i>
-                        <i key={i + 'q'} className="fa fa-trash" onClick = { () => props.delete(i) }></i>
+                        <i  className="fa fa-check-square" onClick = { () => props.isDone(opt.id) }></i>
+                        <i  className="fa fa-trash" onClick = { () => props.delete(i) }></i>
                         </div>
                         </div>
                     )

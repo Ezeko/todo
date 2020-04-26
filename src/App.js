@@ -39,19 +39,19 @@ class App extends Component {
   }*/
 
   isDone ( event ) {
-    console.log(event)
+    //console.log(event)
     this.state.todos.filter(( todo ) => todo.id === event ?  todo.status = 'Cleared' : console.log(todo))
     this.setState({newTodo: ''})
   }
 
   deleteTodo ( event, id ) {
-    console.log(event)
+    //console.log(event)
     this.state.todos.splice(event, 1)
     this.setState({newTodo: ''})
   }
   
   render(){
-    console.log(this.state.todos)
+    //console.log(this.state.todos)
    
     return(
     <div className="App">
