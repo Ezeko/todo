@@ -38,14 +38,12 @@ class App extends Component {
     this.setState({todos: todo})
   }
 
-  isDone () {
-    this.state.todos.filter(( todo )=>{
-      (todo.id == id)
-      console.log(todo)
-    })
+  isDone ( id ) {
+    this.state.todos.filter(( todo ) => todo.id === id ? todo.status = 'Cleared' : console.log(todo))
   }
   
   render(){
+    console.log(this.state.todos)
    
     return(
     <div className="App">
@@ -55,7 +53,7 @@ class App extends Component {
       SubmitTodo={this.handleSubmit} />
 
       <Todos className="todo" todos= {this.state.todos} 
-      changeId ={this.changeStatus}
+      changeId ={this.isDone}
       />
 
     </div>
