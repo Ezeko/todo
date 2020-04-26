@@ -14,7 +14,7 @@ const Todos = props =>{
                             {opt.task}
                         </h1>
                         <i key={i + 'p'} className="fa fa-check-square" onClick = { () => props.isDone(opt.id) }></i>
-                        
+                        <i key={i + 'q'} className="fa fa-trash" onClick = { () => props.delete(i) }></i>
                         </div>
                     )
                 }else{

@@ -38,9 +38,15 @@ class App extends Component {
     this.setState({todos: todo})
   }*/
 
-  isDone ( event , ) {
+  isDone ( event ) {
     console.log(event)
     this.state.todos.filter(( todo ) => todo.id === event ?  todo.status = 'Cleared' : console.log(todo))
+    this.setState({newTodo: ''})
+  }
+
+  deleteTodo ( event, id ) {
+    console.log(event)
+    this.state.todos.splice(event, 1)
     this.setState({newTodo: ''})
   }
   
@@ -56,6 +62,7 @@ class App extends Component {
 
       <Todos className="todo" todos= {this.state.todos} 
       isDone = { (id) => this.isDone(id) }
+      delete = {(i) => this.deleteTodo(i)}
       />
 
     </div>
