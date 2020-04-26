@@ -38,10 +38,10 @@ class App extends Component {
     this.setState({todos: todo})
   }*/
 
-  isDone ( event , id ) {
+  isDone ( event , ) {
     console.log(event)
     this.state.todos.filter(( todo ) => todo.id === event ?  todo.status = 'Cleared' : console.log(todo))
-    return id;
+    this.setState({newTodo: ''})
   }
   
   render(){
