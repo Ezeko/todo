@@ -9,13 +9,15 @@ class App extends Component {
     super()
     // declare the states. the state are the dynamic variables of an app
     // the state of the app is empty at the start of the app
-    this.state = {todos: [],
-                    newTodo: '',
-                  id: 0
-                  };
-    
+    this.state = {
+      todos: [],
+      newTodo: '',
+      id: 0
+    };
     
   }
+
+
   //save todos as you type
    handleChange = (event) =>{
     this.setState({newTodo:  event.target.value })
@@ -28,6 +30,7 @@ class App extends Component {
      let todo = this.state.todos.concat({task: this.state.newTodo, id})
      this.setState({todos: todo, newTodo: '', id})
      event.preventDefault()
+     //console.log(this.state);
 
   }
   changeStatus = () =>{
