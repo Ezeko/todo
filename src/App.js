@@ -27,19 +27,21 @@ class App extends Component {
 
    handleSubmit = (event) =>{
      const id =  this.state.id + 1;
-     let todo = this.state.todos.concat({task: this.state.newTodo, id})
+     let todo = this.state.todos.concat({task: this.state.newTodo, status: 'Uncleared', id})
      this.setState({todos: todo, newTodo: '', id})
      event.preventDefault()
      //console.log(this.state);
 
   }
-  changeStatus = () =>{
+  /*changeStatus = () =>{
     let todo = this.state.todos.concat({task: this.state.newTodo, status: 'Cleared'})
     this.setState({todos: todo})
-  }
+  }*/
 
-  isDone ( id ) {
-    this.state.todos.filter(( todo ) => todo.id === id ? todo.status = 'Cleared' : console.log(todo))
+  isDone ( event , id ) {
+    console.log(event)
+    this.state.todos.filter(( todo ) => todo.id === event ?  todo.status = 'Cleared' : console.log(todo))
+    return id;
   }
   
   render(){
@@ -53,7 +55,7 @@ class App extends Component {
       SubmitTodo={this.handleSubmit} />
 
       <Todos className="todo" todos= {this.state.todos} 
-      changeId ={this.isDone}
+      isDone = { (id) => this.isDone(id) }
       />
 
     </div>

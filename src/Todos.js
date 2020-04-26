@@ -13,7 +13,7 @@ const Todos = props =>{
                         <h1 key={i} id={opt.status} >
                             {opt.task}
                         </h1>
-                        <i key={i + 'p'} className="fa fa-check-square"></i>
+                        <i key={i + 'p'} className="fa fa-check-square" onClick = { () => props.isDone(opt.id) }></i>
                         
                         </div>
                     )
