@@ -13,8 +13,10 @@ const Todos = props =>{
                         <h1 key={i} id={opt.status} >
                             {opt.task}
                         </h1>
+                        <div id='fa-fa'>
                         <i key={i + 'p'} className="fa fa-check-square" onClick = { () => props.isDone(opt.id) }></i>
                         <i key={i + 'q'} className="fa fa-trash" onClick = { () => props.delete(i) }></i>
+                        </div>
                         </div>
                     )
                 }else{
