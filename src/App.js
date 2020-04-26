@@ -11,7 +11,7 @@ class App extends Component {
     // the state of the app is empty at the start of the app
     this.state = {todos: [],
                     newTodo: '',
-                  
+                  id: 0
                   };
     
     
@@ -24,8 +24,9 @@ class App extends Component {
 
 
    handleSubmit = (event) =>{
-     let todo = this.state.todos.concat({task: this.state.newTodo, status: 'NotCleared'})
-     this.setState({todos: todo, newTodo: ''})
+     const id =  this.state.id + 1;
+     let todo = this.state.todos.concat({task: this.state.newTodo, id})
+     this.setState({todos: todo, newTodo: '', id})
      event.preventDefault()
 
   }
